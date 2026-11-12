@@ -15,6 +15,13 @@
 
 ---
 
+> [!TIP]
+> **Dashcam touchscreen broken or unresponsive?** This was made for you. A new or reformatted SD card
+> normally has to be confirmed with a tap on the camera's screen before it records, which is
+> impossible when the touchscreen no longer works. dashcam-sdprep prepares the card on your computer
+> exactly the way the camera's firmware expects, so the camera accepts it and starts recording on
+> its own, without a single tap.
+
 ## Install in one line
 
 Open **Terminal** (macOS) or a terminal window (Linux), paste this, and press Enter:
@@ -51,7 +58,8 @@ camera **profile**, and formats cards to match.
     <td width="50%" valign="top">
       <h3>Prepare SD cards</h3>
       Formats a card exactly the way the camera's firmware expects, then reads it back to prove it
-      passes the same checks the camera runs. Only removable SD/USB cards are ever offered, and
+      passes the same checks the camera runs, so the camera starts recording without asking you to
+      format it, even if its touchscreen is broken. Only removable SD/USB cards are ever offered, and
       nothing is erased until you type the card's name.
     </td>
     <td width="50%" valign="top">
@@ -139,6 +147,12 @@ Have a different camera? A profile is a small JSON file plus a write-up of the e
   <a href="#install-in-one-line">English</a> &nbsp;·&nbsp; <b>한국어</b>
 </p>
 
+> [!TIP]
+> **블랙박스 터치스크린이 고장 나거나 반응하지 않나요?** 바로 그런 분들을 위해 만들었습니다. 새 SD 카드나
+> 다시 포맷한 카드는 보통 블랙박스 화면을 눌러 확인해야 녹화가 시작되는데, 터치스크린이 작동하지 않으면 그럴
+> 수가 없습니다. dashcam-sdprep은 블랙박스 펌웨어가 기대하는 방식 그대로 컴퓨터에서 카드를 준비하므로,
+> 화면을 한 번도 누르지 않아도 블랙박스가 카드를 인식하고 스스로 녹화를 시작합니다.
+
 ## 한 줄로 설치하기
 
 **터미널**(macOS) 또는 터미널 창(Linux)을 열고, 아래 한 줄을 붙여넣은 뒤 Enter를 누르세요.
@@ -175,8 +189,9 @@ Windows)는 다른 클러스터 크기를 쓰거나 대용량 카드를 exFAT으
     <td width="50%" valign="top">
       <h3>SD 카드 준비</h3>
       블랙박스 펌웨어가 기대하는 방식 그대로 카드를 포맷한 뒤, 카메라가 하는 것과 같은 검사를 통과하는지
-      다시 읽어서 확인합니다. 이동식 SD/USB 카드만 선택할 수 있으며, 카드 이름을 직접 입력하기 전에는
-      아무것도 지우지 않습니다.
+      다시 읽어서 확인합니다. 그래서 터치스크린이 고장 난 블랙박스도 포맷하라고 묻지 않고 바로 녹화를
+      시작합니다. 이동식 SD/USB 카드만 선택할 수 있으며, 카드 이름을 직접 입력하기 전에는 아무것도
+      지우지 않습니다.
     </td>
     <td width="50%" valign="top">
       <h3>실제 시각으로 가져오기</h3>
