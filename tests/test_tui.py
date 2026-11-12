@@ -245,3 +245,22 @@ def test_interrupted_copy_leaves_no_partial_file(tmp_path, monkeypatch):
     with pytest.raises(KeyboardInterrupt):
         timefix.copy_verified(src, tmp_path / "out.avi", timefix.sha256(src))
     assert sorted(p.name for p in tmp_path.iterdir()) == ["a.avi"]
+
+
+@pytest.mark.parametrize("typed", [
+    "{p} ", "  {p}", "'{p}'", '"{p}"', "{esc}", "{esc} ",
+])
+def test_photo_paths_as_people_type_paste_or_drag_them(tmp_path, typed):
+    folder = tmp_path / "My Photos"
+    folder.mkdir()
+    photo = folder / "IMG 1.jpg"
+    photo.write_bytes(b"Exif\x00\x00" + tiff("2026:11:12 09:27:52", "+09:00"))
+    raw = typed.format(p=photo, esc=str(photo).replace(" ", "\\ "))
+    assert tui.clean_path(raw) == photo
+    s = Script(["photo", raw, "2026-10-28 13:44:41", True])
+    app = make_app(s, Settings(timezone="Asia/Seoul"), tmp_path)
+    assert app.calibrate_flow() is True
+
+
+def test_clean_path_expands_home():
+    assert tui.clean_path("~/x") == Path.home() / "x"

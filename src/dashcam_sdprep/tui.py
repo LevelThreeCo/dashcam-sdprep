@@ -6,6 +6,7 @@ by a scripted prompter in tests; QuestionaryPrompter is the real terminal implem
 from __future__ import annotations
 
 import os
+import re
 import subprocess
 import sys
 from datetime import datetime, timedelta, timezone, tzinfo
@@ -93,6 +94,20 @@ class QuestionaryPrompter:
 
     def say(self, message: str = "") -> None:
         print(message, flush=True)
+
+
+def clean_path(raw: str) -> Path:
+    """Turn what people type, paste or drag into a terminal into a path.
+
+    Handles surrounding spaces (Tab completion and drag-and-drop add one), quotes, backslash-escaped
+    characters ("My\\ Photos"), and ~.
+    """
+    text = raw.strip()
+    if len(text) >= 2 and text[0] == text[-1] and text[0] in "'\"":
+        text = text[1:-1]
+    else:
+        text = re.sub(r"\\(.)", r"\1", text)
+    return Path(text).expanduser()
 
 
 def describe_offset(offset: timedelta, t: Callable[..., str]) -> str:
@@ -303,7 +318,7 @@ class App:
         raw = self.ui.path(self.t("cal_photo_prompt"), default=str(self.home) + "/")
         if not raw:
             return None
-        taken = photo_time.capture_time(Path(raw).expanduser())
+        taken = photo_time.capture_time(clean_path(raw))
         if taken.tzinfo is None:
             taken = taken.replace(tzinfo=self.zone())
             self.ui.say(self.t("cal_photo_no_zone", zone=self.zone_label()))
@@ -417,7 +432,7 @@ class App:
             elif pick == "type":
                 raw = self.ui.path(self.t("browse_type_prompt"), default=str(current) + "/")
                 if raw:
-                    target = Path(raw).expanduser()
+                    target = clean_path(raw)
                     if target.is_dir():
                         current = target
                     elif self.ui.confirm(self.t("browse_create", path=target), default=True):
