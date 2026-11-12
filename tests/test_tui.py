@@ -108,7 +108,7 @@ def test_folder_browser_opens_creates_and_uses(tmp_path):
 
 def test_screen_calibration_uses_the_moment_enter_was_pressed(tmp_path):
     s = Script(["camera screen", "2026-10-28 13:44:41", True])
-    app = make_app(s, Settings(), tmp_path)
+    app = make_app(s, Settings(timezone="Asia/Seoul"), tmp_path)  # the gap people read depends on the zone
     assert app.calibrate_flow() is True
     assert app.settings.calibration is not None
     assert app.settings.calibration.offset == CAL.offset
