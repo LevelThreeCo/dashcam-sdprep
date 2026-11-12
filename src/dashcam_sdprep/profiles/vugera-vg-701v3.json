@@ -1,0 +1,31 @@
+{
+  "id": "vugera-vg-701v3",
+  "name": "Vugera VG-701V3",
+  "firmware": ["1.0.3", "1.0.4"],
+  "evidence": "docs/profiles/vugera-vg-701v3.md",
+  "partition": {
+    "scheme": "mbr",
+    "index": 1,
+    "types": [1, 4, 6, 11, 12, 14]
+  },
+  "filesystem": {
+    "type": "FAT32",
+    "bytes_per_sector": 512,
+    "cluster_table": [
+      [131072, 1],
+      [262144, 2],
+      [524288, 4],
+      [1048576, 8],
+      [2097152, 8],
+      [4194304, 32],
+      [8388608, 64]
+    ],
+    "cluster_default": 128,
+    "cluster_bytes": 65536,
+    "min_card_bytes": 4294967296,
+    "max_card_bytes": 2199023255552
+  },
+  "recordings": {
+    "pattern": "^(?P<kind>REC|EVT|MAN|IMP|MOT)(?P<channel>\\d)_(?P<date>\\d{8})_(?P<time>\\d{6})(?P<locked>_KEP)?\\.avi$"
+  }
+}

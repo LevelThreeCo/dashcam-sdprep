@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="371" viewBox="0 0 980 371" role="img" aria-label="dashcam-sdprep: import">
+  <rect width="980" height="371" rx="14" fill="#0b1220" stroke="#1f2a3d"/>
+  <rect width="980" height="40" rx="14" fill="#111a2e"/>
+  <rect y="26" width="980" height="14" fill="#111a2e"/>
+  <circle cx="24" cy="20" r="6.5" fill="#ff5f57"/><circle cx="46" cy="20" r="6.5" fill="#febc2e"/><circle cx="68" cy="20" r="6.5" fill="#28c840"/>
+  <text x="490" y="25" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'D2Coding', 'Noto Sans Mono CJK KR', 'Apple SD Gothic Neo', 'Malgun Gothic', monospace" font-size="13" fill="#64748b">dashcam-sdprep: import</text>
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'D2Coding', 'Noto Sans Mono CJK KR', 'Apple SD Gothic Neo', 'Malgun Gothic', monospace" font-size="15">
+    <text x="28" y="84" xml:space="preserve"><tspan fill="#e2e8f0">Found 28 videos, real time 2025-03-15 08:02:11 EST to 2025-03-15 18:44:30 EST.</tspan></text>
+    <text x="28" y="109" xml:space="preserve"><tspan fill="#e2e8f0">They will be copied to ~/Downloads/Dashcam, one folder per day, with subtitle files.</tspan></text>
+    <text x="28" y="134" xml:space="preserve"><tspan fill="#60a5fa" font-weight="700">? </tspan><tspan fill="#f8fafc" font-weight="700">Start importing? </tspan><tspan fill="#22d3ee">Yes</tspan></text>
+    <text x="28" y="159" xml:space="preserve"><tspan fill="#64748b">[1/28] </tspan><tspan fill="#4ade80">imported  </tspan><tspan fill="#e2e8f0">2025-03-15_08-02-11_REC1.avi</tspan></text>
+    <text x="28" y="184" xml:space="preserve"><tspan fill="#64748b">[2/28] </tspan><tspan fill="#4ade80">imported  </tspan><tspan fill="#e2e8f0">2025-03-15_08-03-27_REC1.avi</tspan></text>
+    <text x="28" y="209" xml:space="preserve"><tspan fill="#64748b">[3/28] </tspan><tspan fill="#4ade80">imported  </tspan><tspan fill="#e2e8f0">2025-03-15_08-04-55_EVT1.avi</tspan></text>
+    <text x="28" y="234" xml:space="preserve"><tspan fill="#64748b">   ...</tspan></text>
+    <text x="28" y="259" xml:space="preserve"><tspan fill="#64748b">[28/28] </tspan><tspan fill="#4ade80">imported  </tspan><tspan fill="#e2e8f0">2025-03-15_18-44-30_MOT1.avi</tspan></text>
+    <text x="28" y="284" xml:space="preserve"><tspan fill="#4ade80" font-weight="700">Done: 28 imported, 0 already imported.</tspan></text>
+    <text x="28" y="309" xml:space="preserve"><tspan fill="#60a5fa" font-weight="700">? </tspan><tspan fill="#f8fafc" font-weight="700">Eject the card now? </tspan><tspan fill="#22d3ee">Yes</tspan></text>
+    <text x="28" y="334" xml:space="preserve"><tspan fill="#e2e8f0">The card is ejected. You can remove it.</tspan></text>
+  </g>
+</svg>

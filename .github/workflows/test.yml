@@ -1,0 +1,58 @@
+name: test
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  unit:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+        python: ["3.10", "3.13"]
+        include:
+          - os: ubuntu-22.04
+            python: "3.9"
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - run: pip install -e '.[test]'
+      - run: pytest -q
+
+  e2e-linux:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: sudo apt-get update -qq && sudo apt-get install -y -qq dosfstools
+      - run: sudo scripts/e2e-linux.sh
+
+  e2e-macos:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: scripts/e2e-macos.sh
+
+  installer:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install from this checkout, then update in place, then uninstall
+        env:
+          DASHCAM_SDPREP_SOURCE: ${{ github.workspace }}
+        run: |
+          bash install.sh --no-launch
+          ~/.local/bin/dashcam-sdprep --version
+          bash install.sh --no-launch
+          bash install.sh --uninstall
+          test ! -e ~/.local/bin/dashcam-sdprep

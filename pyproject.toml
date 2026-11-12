@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dashcam-sdprep"
+version = "0.2.0"
+description = "Prepare SD cards the way a dashcam's firmware expects, and correct recording timestamps."
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "LevelThree Co Inc." }]
+requires-python = ">=3.9"
+dependencies = ["questionary>=2.0"]
+classifiers = [
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: MacOS",
+  "Operating System :: POSIX :: Linux",
+  "Programming Language :: Python :: 3",
+  "Topic :: System :: Filesystems",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=7"]
+
+[project.scripts]
+dashcam-sdprep = "dashcam_sdprep.cli:main"
+
+[project.urls]
+Source = "https://github.com/LevelThreeCo/dashcam-sdprep"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+dashcam_sdprep = ["profiles/*.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
