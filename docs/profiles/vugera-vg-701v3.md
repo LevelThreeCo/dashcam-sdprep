@@ -8,7 +8,25 @@ addresses in those 32-bit ARM binaries.
 
 **Tested on a device:** a camera running firmware 1.0.3 (it reports its version in `setup.ini`) rejected a 32 GB card formatted by SD Card Formatter and accepted the same card formatted by this tool, then recorded normally. The rules were analysed in 1.0.4.
 
-No firmware or binaries are distributed with this project. The notes describe behaviour so the
+No firmware or binaries are distributed with this project.
+
+## The firmware file
+
+The 1.0.4 update analysed here was downloaded from a Google Drive link of unknown origin; it is not
+known to be an official Vugera download. It is listed so the analysis can be checked and so owners
+can find the update, **not** hosted here.
+
+- Download: [https://drive.google.com/file/d/1xr0Tk2So4ZaZwfTHtBi7q3Uo3aqGIVNF](https://drive.google.com/file/d/1xr0Tk2So4ZaZwfTHtBi7q3Uo3aqGIVNF)
+- Check that you have the exact same file before using it:
+
+| File | Size (bytes) | SHA-256 |
+|---|---|---|
+| `VG-701V3 1.0.4.zip` | 12,964,772 | `d2f8baea16974719a003e6eb8ee1707cc395140aaf8ef83fb44e068eb62893bb` |
+| `VG-701V3_1.0.4_KOR_Knl_App_uBoot.rom` (inside the zip) | 13,169,284 | `185c13d0c38f4f51937e62865b4fd46de341eeb20a1154fd517dc86cf75e536e` |
+
+On macOS or Linux: `shasum -a 256 "VG-701V3 1.0.4.zip"`. If the hash differs, it is not the file
+described here. Installing firmware on a camera is entirely at your own risk; this project does
+not install firmware and cannot help with a failed update. The notes describe behaviour so the
 profile can be checked against the original firmware.
 
 ## What happens when a card is inserted

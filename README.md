@@ -101,6 +101,10 @@ drift in the camera's clock.
 |---|---|---|---|
 | Vugera VG-701V3 | 1.0.3 (tested on a camera), 1.0.4 (analysed) | MBR, FAT32, 64 KiB clusters, cards of 4.3 GB or more | [notes](docs/profiles/vugera-vg-701v3.md) |
 
+Firmware 1.0.4 update file: [download](https://drive.google.com/file/d/1xr0Tk2So4ZaZwfTHtBi7q3Uo3aqGIVNF) (Google Drive, unofficial copy of unknown origin;
+check its SHA-256 against the [notes](docs/profiles/vugera-vg-701v3.md#the-firmware-file) before
+use; installing firmware is at your own risk).
+
 Have a different camera? A profile is a small JSON file plus a write-up of the evidence. See
 [CONTRIBUTING.md](CONTRIBUTING.md).
 
@@ -218,6 +222,10 @@ Windows)는 다른 클러스터 크기를 쓰거나 대용량 카드를 exFAT으
 | 기종 | 펌웨어 | 카드 조건 | 근거 자료 |
 |---|---|---|---|
 | Vugera VG-701V3 | 1.0.3 (실제 기기에서 확인), 1.0.4 (분석) | MBR, FAT32, 64 KiB 클러스터, 4.3 GB 이상 카드 | [분석 노트 (영문)](docs/profiles/vugera-vg-701v3.md) |
+
+펌웨어 1.0.4 업데이트 파일: [다운로드](https://drive.google.com/file/d/1xr0Tk2So4ZaZwfTHtBi7q3Uo3aqGIVNF) (Google Drive, 출처를 알 수 없는 비공식 사본입니다.
+사용 전에 [분석 노트](docs/profiles/vugera-vg-701v3.md#the-firmware-file)의 SHA-256 값과 비교하세요.
+펌웨어 설치는 전적으로 사용자 책임입니다.)
 
 다른 기종을 쓰시나요? 프로필은 작은 JSON 파일과 근거 자료 설명으로 이루어집니다.
 [CONTRIBUTING.md](CONTRIBUTING.md) (영문)를 참고하세요.
